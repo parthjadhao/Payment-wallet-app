@@ -1,5 +1,5 @@
 {
-  "name": "@repo/tailwind-config",
+  "name": "@payment-wallet-app/tailwind-config",
   "version": "0.0.0",
   "type": "module",
   "private": true,

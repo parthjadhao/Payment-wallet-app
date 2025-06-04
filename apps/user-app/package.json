@@ -11,8 +11,13 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@payment-wallet-app/db": "workspace:*",
     "@payment-wallet-app/ui": "workspace:*",
+    "@prisma/client": "6.8.2",
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^6.0.0",
     "next": "^15.3.0",
+    "next-auth": "^4.24.11",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -21,7 +26,6 @@
     "@payment-wallet-app/eslint-config": "workspace:*",
     "@payment-wallet-app/tailwind-config": "workspace:*",
     "@payment-wallet-app/typescript-config": "workspace:*",
-    "@payment-wallet-app/db" : "workspace:*",
     "@tailwindcss/postcss": "^4.1.5",
     "@types/node": "^22.15.3",
     "@types/react": "^19.1.0",

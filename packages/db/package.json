@@ -18,6 +18,6 @@
     "@payment-wallet-app/typescript-config": "workspace:*"
   },
   "exports":{
-    "./client":"./index.ts"
+    "./prismaClient":"./index.ts"
   }
 }

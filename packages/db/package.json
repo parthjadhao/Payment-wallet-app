@@ -11,13 +11,17 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "6.8.2",
-    "prisma": "^6.8.2",
-    "typescript": "^5.8.3"
+    "prisma": "^6.8.2"
   },
   "devDependencies": {
-    "@payment-wallet-app/typescript-config": "workspace:*"
+    "@payment-wallet-app/typescript-config": "workspace:*",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   },
-  "exports":{
-    "./prismaClient":"./index.ts"
+  "exports": {
+    "./prismaClient": "./index.ts"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }

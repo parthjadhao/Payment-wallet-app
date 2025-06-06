@@ -9,7 +9,7 @@ interface AppbarProps {
 }
 
 export function Appbar({ user, onSignin, onSignout }: AppbarProps) {
-    return <div className="flex justify-between p-2 border-b items-center">
+    return <div className="flex justify-between p-2 border-b border-slate-300 items-center">
         <div className="font-semibold text-2xl">
             Wallet
         </div>

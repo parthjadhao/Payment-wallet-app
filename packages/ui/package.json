@@ -9,8 +9,7 @@
   ],
   "exports": {
     "./styles.css": "./dist/index.css",
-    "./*": "./dist/*.js",
-    "./appbar":"./appbar"
+    "./*": "./dist/*.js"
     
   },
   "license": "MIT",

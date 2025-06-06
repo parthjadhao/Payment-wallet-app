@@ -1,58 +1,30 @@
-# Turborepo Tailwind CSS starter
+# 💸 Payment Wallet Web App
 
-This Turborepo starter is maintained by the Turborepo core team.
+A full-stack **Payment Wallet Web Application** that enables users to manage their digital funds securely. This project uses cutting-edge web technologies and modern best practices for authentication, database access, and UI rendering.
 
-## Using this example
+## 🛠️ Tech Stack
 
-Run the following command:
+### Frontend
+- **Next.js** – React-based framework for fast, server-rendered and statically generated pages.
+- **Tailwind CSS** – Utility-first CSS framework for styling.
 
-```sh
-npx create-turbo@latest -e with-tailwind
-```
+### Backend
+- **Express.js** – Lightweight Node.js framework for building robust APIs.
 
-## What's inside?
+### Authentication
+- **NextAuth.js** – Authentication solution for Next.js apps with OAuth, Email, Credentials, and more.
 
-This Turborepo includes the following packages/apps:
+### Database & ORM
+- **Prisma** – Next-generation ORM for PostgreSQL, MySQL, SQLite and more.
 
-### Apps and Packages
+---
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `@payment-wallet-app/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@payment-wallet-app/typescript-config`: `tsconfig.json`s used throughout the monorepo
+## 📦 Features
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Building packages/ui
-
-This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.ts`. This was chosen for several reasons:
-
-- Make sharing one `tailwind.config.ts` to apps and packages as easy as possible.
-- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
-- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
-- Maintain clear package export boundaries.
-
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.ts` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
-
-For example, in [tailwind.config.ts](packages/tailwind-config/tailwind.config.ts):
-
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/ui/*.{js,ts,jsx,tsx}",
-  ],
-```
-
-If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- 🔐 Secure user authentication using NextAuth
+- 🏦 Wallet account with balance tracking
+- 💸 Send/receive money between users
+- 🧾 Transaction history
+- 🧑‍💼 User dashboard
+- ⚙️ Admin-ready architecture
+- 🌐 API integration between frontend and backend

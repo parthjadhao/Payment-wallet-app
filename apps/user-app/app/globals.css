@@ -1,3 +1,9 @@
 @import "tailwindcss";
 @import "@payment-wallet-app/tailwind-config";
 @import "@payment-wallet-app/ui/styles.css";
+
+@theme {
+    --color-background: #090b10;
+    --color-border: ##212327;
+    --color-bermuda: #78dcca;
+}

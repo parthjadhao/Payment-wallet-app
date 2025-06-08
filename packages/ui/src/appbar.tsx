@@ -9,8 +9,8 @@ interface AppbarProps {
 }
 
 export function Appbar({ user, onSignin, onSignout }: AppbarProps) {
-    return <div className="flex justify-between p-2 border-b border-slate-300 items-center">
-        <div className="font-semibold text-2xl">
+    return <div className="flex justify-between px-50 py-2 border-b border-slate-700 items-center">
+        <div className="font-bold text-2xl text-blue-600">
             Wallet
         </div>
         <Button onclick={user ? onSignin : onSignout}>

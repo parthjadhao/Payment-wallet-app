@@ -10,8 +10,8 @@ generator client {
 }
 
 datasource db {
+  url      = "postgresql://postgres:mysecretpassword@localhost:5432/postgres"
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 

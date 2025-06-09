@@ -11,10 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "6.8.2",
+    "bcrypt": "^6.0.0",
     "prisma": "^6.8.2"
   },
   "devDependencies": {
     "@payment-wallet-app/typescript-config": "workspace:*",
+    "@types/bcrypt": "^5.0.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },

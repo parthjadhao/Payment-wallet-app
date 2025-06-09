@@ -3,6 +3,8 @@ import { prisma } from "@payment-wallet-app/db/prismaClient";
 
 const app = express()
 
+app.use(express.json())
+
 app.post("/hdfcWebhook", async (req, res) => {
     // TODO : Add zod validation
     // TODO : logic for checking whether this webhook coming from hdfc bank use a webhook secret 
@@ -11,15 +13,21 @@ app.post("/hdfcWebhook", async (req, res) => {
         userId: req.body.userId,
         amount: req.body.amount
     };
+    console.log(paymentInformation)
     try {
         await prisma.$transaction([
-            prisma.balance.update({
+            prisma.balance.upsert({
                 where: {
                     userId: Number(paymentInformation.userId)
                 },
-                data: {
-                    amount: {
-                        increment: Number(paymentInformation.amount)
+                update:{
+                    amount : {increment : Number(req.body.amount)}
+                },
+                create:{
+                    amount : Number(req.body.amount),
+                    locked : 0,
+                    user : {
+                        connect : {id : paymentInformation.userId}
                     }
                 }
             }),
@@ -42,3 +50,7 @@ app.post("/hdfcWebhook", async (req, res) => {
         })
     }
 })
+
+app.listen(3000, () => {
+    console.log("Server running on http://localhost:3000");
+});

@@ -1,6 +1,7 @@
 import { prisma } from "@payment-wallet-app/db/prismaClient";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
+import { Session } from "inspector/promises";
 
 
 export const Next_Auth_CONFIG = {
@@ -56,5 +57,12 @@ export const Next_Auth_CONFIG = {
             },
         })
     ],
-    secret: process.env.NEXTAUTH_SECRET
+    secret: process.env.NEXTAUTH_SECRET || "secret",
+    callbacks:{
+        async session({token,session}:any){
+            session.user.id = token.sub
+
+            return session
+        }
+    }
 }

@@ -14,7 +14,7 @@ async function main() {
       number: '9999999999',
       password: alicePassword,
       name: 'alicey',
-      onRampTransaction: {
+      OnRampTransaction: {
         create: {
           startTime: new Date(),
           status: "Success",
@@ -33,7 +33,7 @@ async function main() {
       number: '9999999998',
       password: bobPassword,
       name: 'boby',
-      onRampTransaction: {
+      OnRampTransaction: {
         create: {
           startTime: new Date(),
           status: "Failure",

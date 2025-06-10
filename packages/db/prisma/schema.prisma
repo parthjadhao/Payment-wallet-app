@@ -10,19 +10,21 @@ generator client {
 }
 
 datasource db {
-  url      = "postgresql://postgres:mysecretpassword@localhost:5432/postgres"
+  url      = env("DATABASE_URL")
   provider = "postgresql"
 }
 
 
-model User{
-  id Int @id @default(autoincrement())
-  email String? @unique
-  name String?
-  number String @unique
-  password String
-  onRampTransaction OnRampTransaction[]
-  balance Balance[]
+model User {
+  id                Int                 @id @default(autoincrement())
+  email             String?             @unique
+  name              String?
+  number            String              @unique
+  password          String
+  OnRampTransaction OnRampTransaction[]
+  Balance           Balance[]
+  sentTransfers     p2pTransfer[]       @relation(name: "FromUserRelation")
+  receivedTransfers p2pTransfer[]       @relation(name: "ToUserRelation")
 }
 
 model Merchant{
@@ -51,6 +53,15 @@ model Balance{
   user User @relation(fields: [userId],references: [id])
 }
 
+model p2pTransfer {
+  id         Int          @id @default(autoincrement())
+  amount     Int
+  timestamp  DateTime
+  fromUserId Int
+  fromUser   User         @relation(name: "FromUserRelation", fields: [fromUserId], references: [id])
+  toUserId   Int
+  toUser     User         @relation(name: "ToUserRelation", fields: [toUserId], references: [id])
+}
 enum onRampStatus{
   Success
   Failure
